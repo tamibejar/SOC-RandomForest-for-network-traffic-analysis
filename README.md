@@ -1,96 +1,70 @@
-# 🧠 Proyecto Programación avanzada para la ciencia de datos: Simulación y Clasificación de Tráfico de Red
+# Simulación y Clasificación de Tráfico de Red para un SOC
+## Proyecto Final de Programación Avanzada para la ciencia de datos 
 
 Este proyecto implementa una simulación de tráfico de red en tiempo real, clasifica paquetes como **benignos** o **maliciosos (DDoS)** utilizando un modelo de machine learning, y presenta los resultados en un dashboard interactivo tipo **SOC (Security Operations Center)**.
 
 ---
 
-## 🔧 Estructura del Proyecto
-
 ProyectoPACD/
 ├── app/
-│ ├── simulator.py # Simula tráfico real desde el dataset
-│ ├── classifier.py # Clasificador de paquetes con modelo ML
-├── models/
-│ └── traffic_model.pkl # Modelo entrenado (ej. Random Forest)
+│ ├── simulator.py # Simula tráfico real a partir del dataset
+│ └── classifier.py # Clasifica paquetes usando el modelo de ML
 ├── data/
 │ └── processed/
 │ └── clean_dataset.csv # Dataset limpio y normalizado
 ├── logs/
-│ └── traffic_log.csv # Archivo generado automáticamente
-├── dashboard.py # Dashboard Streamlit interactivo
-├── requirements.txt # Dependencias del entorno
-└── README.md
+│ └── traffic_log.csv # Log de los paquetes clasificados
+├── models/
+│ └── traffic_model.pkl # Modelo de ML entrenado (Random Forest)
+├── dashboard.py # Script del dashboard con Streamlit
+├── requirements.txt # Dependencias del proyecto
+└── README.md # Este archivo
 
 ---
 
-## 🚀 ¿Cómo ejecutar el proyecto?
+## ¿Cómo ejecutar el proyecto?
 
-### 1. Instalar dependencias
+### paso n°1: Instalar dependencias
+Abre una terminal, navega a la raíz del proyecto y ejecuta el siguiente comando para instalar las librerías necesarias:
+pip install -r requirements.txtxt
 
-pip install -r requirements.txt
-2. Ejecutar el simulador en una terminal
-bash
-Copiar
-Editar
+### paso n°2: Ejecutar el simulador en una terminal
+En la misma terminal, inicia la simulación de tráfico. Este script generará paquetes, los clasificará y guardará los resultados en logs/traffic_log.csv
+Generated bash:
 python -m app.simulator
-Esto comenzará a generar tráfico aleatorio a partir del dataset y clasificará cada paquete como benigno o malicioso usando el modelo entrenado. Los resultados se guardan automáticamente en logs/traffic_log.csv.
-
-3. Ejecutar el dashboard en otra terminal
-bash
+[bash
 Copiar
 Editar
+python -m app.simulator]
+
+### paso n°3: Ejecutar el dashboard en otra terminal
+Abre una segunda terminal y ejecuta el siguiente comando para iniciar la interfaz web interactiva. Tu navegador se abrirá automáticamente con el dashboard:
+Generated bash
 streamlit run dashboard.py
-Esto abrirá una interfaz web interactiva donde podrás visualizar:
 
-Tráfico en tiempo real
+### Características del Dashboard
 
-Distribución de predicciones
+El dashboard se actualiza automáticamente cada 5 segundos para ofrecer una visión en tiempo real de la simulación. Incluye las siguientes características:
 
-Accuracy del modelo
+*   **Métricas Clave:**
+    *   Contadores de tráfico total, benigno, ataques DDoS y la precisión (accuracy) del modelo.
+*   **Visualizaciones de Datos:**
+    *   Distribución de predicciones (gráfico de pastel y barras).
+    *   Evolución del tráfico a lo largo del tiempo.
+    *   Comparativa entre predicciones y valores reales.
+*   **Análisis del Modelo:**
+    *   Matriz de confusión interactiva.
+    *   Análisis de Falsos Positivos y Falsos Negativos.
+    *   Gráfico de dispersión de la confianza del modelo.
+*   **Tabla de Eventos:**
+    *   Registro con los últimos paquetes clasificados.
 
-Falsos positivos/negativos
+### Tecnologías Utilizadas
+* **Lenguaje:** Python 3.10
+* **Análisis de Datos y ML:** Pandas, Scikit-learn
+* **Dashboard y Visualización:** Streamlit, Plotly, Seaborn, Matplotlib
+* **Modelo:** Joblib (para guardar y cargar el modelo entrenado)
 
-Matriz de confusión
 
-Tabla de eventos recientes
 
-Autoactualización automática cada 5 segundos
-
-¿Qué incluye el dashboard?
-Auto-refresh cada 5 segundos
-
-Métricas clave (total, benignos, DDoS, accuracy)
-
-Comparación de predicción vs realidad
-
-Evolución temporal del tráfico
-
-Gráfico de pastel y barras
-
-Dispersión de confianza del modelo
-
-Matriz de confusión y tasa de errores
-
-Tabla de últimos eventos
-
-Tecnologías usadas
-Python 3.10.0
-
-Streamlit
-
-Pandas
-
-Plotly
-
-Seaborn
-
-Matplotlib
-
-Scikit-learn
-
-Joblib
-
-👨‍💻 Autores
-Daniel Sebastián Cabrera Lazo
-Universidad del Pacífico
 Proyecto final — Programación Avanzada para Ciencia de Datos
