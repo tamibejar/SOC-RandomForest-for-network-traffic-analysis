@@ -37,8 +37,7 @@ python -m app.simulator
 ### Paso n°3: Ejecutar el dashboard en otra terminal
 Abre una segunda terminal y ejecuta el siguiente comando para iniciar la interfaz web interactiva. Tu navegador se abrirá automáticamente con el dashboard:
 Generated bash
-streamlit run dashboard.py
-
+streamlit run dashboard/dashboard_app.py  
 ### Características del Dashboard
 
 El dashboard se actualiza automáticamente cada 5 segundos para ofrecer una visión en tiempo real de la simulación. Incluye las siguientes características:
@@ -61,7 +60,5 @@ El dashboard se actualiza automáticamente cada 5 segundos para ofrecer una visi
 * **Análisis de Datos y ML:** Pandas, Scikit-learn
 * **Dashboard y Visualización:** Streamlit, Plotly, Seaborn, Matplotlib
 * **Modelo:** Joblib (para guardar y cargar el modelo entrenado)
-
-
 
 Proyecto final — Programación Avanzada para Ciencia de Datos
