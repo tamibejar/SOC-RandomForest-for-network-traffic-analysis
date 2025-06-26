@@ -1,9 +1,10 @@
-# Simulación y Clasificación de Tráfico de Red para un SOC
+![image](https://github.com/user-attachments/assets/22010213-ef62-4253-aa8a-86a8ceee08e1)# Simulación y Clasificación de Tráfico de Red para un SOC
+
+---
+
 ## Proyecto Final de Programación Avanzada para la ciencia de datos 
 
 Este proyecto implementa una simulación de tráfico de red en tiempo real, clasifica paquetes como **benignos** o **maliciosos (DDoS)** utilizando un modelo de machine learning, y presenta los resultados en un dashboard interactivo tipo **SOC (Security Operations Center)**.
-
----
 
 ProyectoPACD/
 ├── app/
@@ -24,20 +25,16 @@ ProyectoPACD/
 
 ## ¿Cómo ejecutar el proyecto?
 
-### paso n°1: Instalar dependencias
+### Paso n°1: Instalar dependencias
 Abre una terminal, navega a la raíz del proyecto y ejecuta el siguiente comando para instalar las librerías necesarias:
 pip install -r requirements.txtxt
 
-### paso n°2: Ejecutar el simulador en una terminal
+### Paso n°2: Ejecutar el simulador en una terminal
 En la misma terminal, inicia la simulación de tráfico. Este script generará paquetes, los clasificará y guardará los resultados en logs/traffic_log.csv
 Generated bash:
 python -m app.simulator
-[bash
-Copiar
-Editar
-python -m app.simulator]
 
-### paso n°3: Ejecutar el dashboard en otra terminal
+### Paso n°3: Ejecutar el dashboard en otra terminal
 Abre una segunda terminal y ejecuta el siguiente comando para iniciar la interfaz web interactiva. Tu navegador se abrirá automáticamente con el dashboard:
 Generated bash
 streamlit run dashboard.py
